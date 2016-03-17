@@ -36,3 +36,9 @@ alias calc='bc'
 alias setclip='xclip -selection c'
 alias getclip='xclip -selection clipboard -o'
 ```
+
+How to use:
+```
+>>> echo "stuff I want to paste anywhere" | setclip
+>>> getclip | grep "search in text I copied with my mouse"
+```
