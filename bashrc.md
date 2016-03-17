@@ -38,7 +38,7 @@ alias getclip='xclip -selection clipboard -o'
 ```
 
 How to use:
-```
+```sh
 >>> echo "stuff I want to paste anywhere" | setclip
 >>> getclip | grep "search in text I copied with my mouse"
 ```
