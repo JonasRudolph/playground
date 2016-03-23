@@ -42,3 +42,16 @@ How to use:
 >>> echo "stuff I want to paste anywhere" | setclip
 >>> getclip | grep "search in text I copied with my mouse"
 ```
+
+### Remind-function
+```sh
+############
+# Expects $1 to be an integer or a string which describes how long to sleep. E.g. '3' or '5m'
+# Expects $2 to be a string - the message
+##
+function remind () {
+  sleep "$1" 2>&1 1>/dev/null
+  notify-send --urgency critical 'Erinnerung' 2>&1 1>/dev/null
+}
+
+```
