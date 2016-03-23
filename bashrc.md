@@ -2,11 +2,11 @@
 
 ### My bash-prompt
 ```sh
-PS1='--- \u in \w (`ls -A1 -p | wc -l`) ---\n>>> '
+PS1='--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]`ls -A1 | wc -l`\[\e[m\]) at \t ---\n>>> '
 ```
 this outputs something like:
 ```
---- jrudolph in ~/Projects/Stuff (75) ---
+--- jrudolph in ~/Projects/CrazyStuff (1) at 14:24:16 ---
 >>> 
 ```
 
