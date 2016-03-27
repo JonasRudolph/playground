@@ -1,1 +1,1 @@
-### shared - A repo for random stuff I want to remember
+### remember - A repository for stuff I want to remember
