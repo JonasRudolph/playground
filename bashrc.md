@@ -2,7 +2,7 @@
 
 ### My bash-prompt
 ```sh
-PS1='--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]`ls -A1 | wc -l`\[\e[m\]) at \t ---\n>>> '
+PS1='--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]`ls -A1 | wc -l | tr -d [[:space:]]`\[\e[m\]) at \t ---\n>>> '
 ```
 this outputs something like:
 ```
