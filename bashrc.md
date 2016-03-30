@@ -20,9 +20,10 @@ PS1="--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]\`filecount\`\[
 ```
 this outputs something like:
 ```
---- jrudolph in ~/Projects/CrazyStuff (1) at 14:24:16 ---
->>> 
+--- jrudolph in ~/Projects/remember (20) at 16:12:32 on branch feature-1056-a-cool-feature ---
+>>>  
 ```
+If I'm in a git repository and without 'on branch ...' when not.
 
 ### Navigation-aliase:
 ```sh
