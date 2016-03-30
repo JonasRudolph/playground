@@ -2,7 +2,21 @@
 
 ### My bash-prompt
 ```sh
-PS1='--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]`ls -A1 | wc -l | tr -d [[:space:]]`\[\e[m\]) at \t ---\n>>> '
+alias current_branch='git branch 2>/dev/null | grep -E "^\*" | tr -d "* "'
+
+function current_branch_info_or_nothing() {
+    local current_branch_var=$(echo -n `current_branch`)
+    if [ -z "$current_branch_var" ]; then
+        echo -n ""
+    else
+        echo -n -e "on branch \e[35m$current_branch_var\e[m "
+        current_branch_var=""
+    fi
+}
+
+alias filecount='ls -A1 | wc -l'
+
+PS1="--- \[\e[32m\]\u\[\e[m\] in \[\e[33m\]\w\[\e[m\] (\[\e[36m\]\`filecount\`\[\e[m\]) at \t \`current_branch_info_or_nothing\`---\n>>> "
 ```
 this outputs something like:
 ```
