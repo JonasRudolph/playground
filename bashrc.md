@@ -71,3 +71,8 @@ function remind () {
 }
 
 ```
+
+## Enable recusive file expansion like `**/*.*`
+```sh
+shopt -s globstar
+```
