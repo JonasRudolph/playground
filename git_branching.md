@@ -44,3 +44,14 @@ git push
 git push origin --delete release-X.X.X
 git branch -d release-X.X.X
 ```
+
+## Untrack branches that where deleted on the remote
+```bash
+git fetch --all --prune
+```
+
+## List local branches with their remote copies
+(Branches, that were deleted on remote, will be marked as `gone`)
+```bash
+git branch -vv
+```
