@@ -27,6 +27,12 @@ git checkout -b release-X.X.X develop
 git push --set-upstream origin release-X.X.X
 ```
 
+## Commit release changes
+```bash
+git commit -m "Release 0.9.4"
+git push
+```
+
 ## Finish release
 ```bash
 # Merge release into master, create tag and push
