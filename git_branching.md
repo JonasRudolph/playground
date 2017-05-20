@@ -30,7 +30,7 @@ git push --set-upstream origin release-X.X.X
 
 ## Commit release changes
 ```bash
-git commit -m "Release 0.9.4"
+git commit -m "Release X.X.X"
 git push
 ```
 
