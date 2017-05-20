@@ -11,7 +11,8 @@ git push --set-upstream origin myfeature
 ## Finish feature
 ```bash
 # Merge feature into develop
-git merge --no-ff myfeature develop
+git checkout develop
+git merge --no-ff myfeature
 
 # Push develop branch
 git push origin develop
