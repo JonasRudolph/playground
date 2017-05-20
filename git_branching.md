@@ -15,7 +15,7 @@ git checkout develop
 git merge --no-ff myfeature
 
 # Push develop branch
-git push origin develop
+git push
 
 # Remove feature branch
 git push origin --delete myfeature
@@ -40,7 +40,8 @@ git push
 git checkout master
 git merge --no-ff release-X.X.X
 git tag -a X.X.X
-git push && git push --tags
+git push
+git push --tags
 
 # Merge release into develop and push
 git checkout develop
