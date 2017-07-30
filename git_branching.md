@@ -24,7 +24,7 @@ git push --set-upstream origin myfeature
    git branch -d myfeature
    ```
 
-## Create and edit release
+## Create release
 1. Execute  
    ```bash
    git checkout -b release-X.X.X develop
@@ -32,7 +32,7 @@ git push --set-upstream origin myfeature
 2. Set release number in CHANGELOG.md
 3. Add a new [Unreleased] entry to the CHANGELOG.md
 4. Set release number in other files (e.g. package.json)
-5. Commit and push release changes  
+5. Execute
    ```bash
    git add CHANGELOG.md [package.json ...]
    git commit -m "Release X.X.X"
