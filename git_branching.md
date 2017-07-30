@@ -44,7 +44,7 @@ git push --set-upstream origin myfeature
 # Merge release into master, create tag and push
 git checkout master
 git merge --no-ff release-X.X.X
-git tag -a X.X.X
+git tag -a X.X.X -m "For changes see [X.X.X] section in CHANGELOG.md"
 git push
 git push --tags
 
