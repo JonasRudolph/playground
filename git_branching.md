@@ -31,16 +31,12 @@ git push --set-upstream origin myfeature
    ```
 2. Set release number in CHANGELOG.md
 3. Set release number in other files (e.g. package.json)
-4. Execute  
-   ```bash
+4. Commit and push release changes  
+   ```bash
+   git add CHANGELOG.md [package.json ...]
+   git commit -m "Release X.X.X"
    git push --set-upstream origin release-X.X.X
-   ```
-
-## Commit release changes
-```bash
-git commit -m "Release X.X.X"
-git push
-```
+   ```
 
 ## Finish release
 ```bash
