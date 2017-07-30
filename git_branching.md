@@ -9,24 +9,29 @@ git push --set-upstream origin myfeature
 ```
 
 ## Finish feature
-```bash
-# Merge feature into develop
-git checkout develop
-git merge --no-ff myfeature
-
-# Push develop branch
-git push
-
-# Remove feature branch
-git push origin --delete myfeature
-git branch -d myfeature
-```
+1. Add changes to CHANGELOG.md
+2. Execute
+   ```bash
+   # Merge feature into develop
+   git checkout develop
+   git merge --no-ff myfeature
+   
+   # Push develop branch
+   git push
+   
+   # Remove feature branch
+   git push origin --delete myfeature
+   git branch -d myfeature
+   ```
 
 ## Create release
-```bash
-git checkout -b release-X.X.X develop
-git push --set-upstream origin release-X.X.X
-```
+1. Execute
+   ```bash
+   git checkout -b release-X.X.X develop
+   git push --set-upstream origin release-X.X.X
+   ```
+2. Set release number in CHANGELOG.md
+3. Set release number in other files (e.g. package.json)
 
 ## Commit release changes
 ```bash
