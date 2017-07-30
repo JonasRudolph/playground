@@ -28,10 +28,13 @@ git push --set-upstream origin myfeature
 1. Execute
    ```bash
    git checkout -b release-X.X.X develop
-   git push --set-upstream origin release-X.X.X
    ```
 2. Set release number in CHANGELOG.md
 3. Set release number in other files (e.g. package.json)
+4. Execute
+   ```bash
+   git push --set-upstream origin release-X.X.X
+   ```
 
 ## Commit release changes
 ```bash
