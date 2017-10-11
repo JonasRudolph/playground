@@ -15,8 +15,7 @@ curl -u JonasRudolph https://api.github.com/user/repos -d '{ "name": "${repo}" }
    ```
 1. Execute  
    ```bash
-   git checkout -b "${featureToCreate}" develop
-   git push --set-upstream origin "${featureToCreate}"
+   git checkout -b "${featureToCreate}" develop && git push --set-upstream origin "${featureToCreate}"
    ```
 
 ## Finish feature
@@ -25,18 +24,13 @@ curl -u JonasRudolph https://api.github.com/user/repos -d '{ "name": "${repo}" }
    ```bash
    featureToFinish='my-feature'
    ```
-2. Execute
+2. Merge feature into develop and push
    ```bash
-   # Merge feature into develop
-   git checkout develop
-   git merge --no-ff "${featureToFinish}"
-   
-   # Push develop branch
-   git push
-   
-   # Remove feature branch
-   git push origin --delete "${featureToFinish}"
-   git branch -d "${featureToFinish}"
+   git checkout develop && git merge --no-ff "${featureToFinish}" && git push
+   ```
+3. Remove feature branch
+   ```bash
+   git push origin --delete "${featureToFinish}" && git branch -d "${featureToFinish}"
    ```
 
 ## Create release
@@ -44,18 +38,16 @@ curl -u JonasRudolph https://api.github.com/user/repos -d '{ "name": "${repo}" }
    ```bash
    releaseToCreate='X.X.X'
    ```
-1. Execute  
+1. Create release branch
    ```bash
    git checkout -b "release-${releaseToCreate}" develop
    ```
 2. Set release number in CHANGELOG.md
 3. Add a new [Unreleased] entry to the CHANGELOG.md
 4. Set release number in other files (e.g. package.json, documentation, changescripts)
-5. Execute
+5. Push changes made
    ```bash
-   git add CHANGELOG.md [package.json ...]
-   git commit -m "${releaseToCreate}"
-   git push --set-upstream origin "release-${releaseToCreate}"
+   git add -A &&  git commit -m "${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
    ```
 
 ## Finish release
@@ -63,23 +55,21 @@ curl -u JonasRudolph https://api.github.com/user/repos -d '{ "name": "${repo}" }
    ```bash
    releaseToFinish='X.X.X'
    ```
-1. Execute   
+1. Merge release into master  
    ```bash
-   # Merge release into master, create tag and push
-   git checkout master
-   git merge --no-ff "release-${releaseToFinish}"
-   git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md"
-   git push
-   git push --tags
-
-   # Merge release into develop and push
-   git checkout develop
-   git merge --no-ff "release-${releaseToFinish}"
-   git push
-
-   # Remove release branch
-   git push origin --delete "release-${releaseToFinish}"
-   git branch -d "release-${releaseToFinish}"
+   git checkout master && git merge --no-ff "release-${releaseToFinish}"
+   ```
+2. Create tag an push
+   ```bash
+   git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md" && git push && git push --tags
+   ```
+3. Merge release into develop and push
+   ```bash
+   git checkout develop && git merge --no-ff "release-${releaseToFinish}" && git push
+   ```
+4. Remove release branch
+   ```bash
+   git push origin --delete "release-${releaseToFinish}" && git branch -d "release-${releaseToFinish}"
    ```
 
 ## Untrack branches that where deleted on the remote
