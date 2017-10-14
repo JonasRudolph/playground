@@ -5,7 +5,7 @@
 ## Create new repository on GitHub via CLI
 ```bash
 repo="name-of-the-new-repo"
-curl -u JonasRudolph https://api.github.com/user/repos -d '{ "name": "${repo}" }'
+curl -u JonasRudolph https://api.github.com/user/repos -d "{ \"name\": \"${repo}\" }"
 ```
 
 ## Create feature
