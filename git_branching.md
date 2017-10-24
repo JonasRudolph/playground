@@ -53,7 +53,7 @@ curl -u JonasRudolph https://api.github.com/user/repos -d "{ \"name\": \"${repo}
 ## Finish release
 0. Set release number
    ```bash
-   releaseToFinish='X.X.X'
+   releaseToFinish="${releaseToCreate}"
    ```
 1. Merge release into master  
    ```bash
