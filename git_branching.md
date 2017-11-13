@@ -50,6 +50,7 @@
 3. Remove unused sections from CHANGELOG.md
 4. Add a new [Unreleased] entry to the CHANGELOG.md
 5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml)
+6. (Optional) Create a build
 6. Push changes made
    ```bash
    git add -A &&  git commit -m "${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
@@ -76,9 +77,6 @@
    ```bash
    git push origin --delete "release-${releaseToFinish}" && git branch -d "release-${releaseToFinish}"
    ```
-
-## Optional
-0. Create a build
 
 ## Untrack branches that where deleted on the remote
 ```bash
