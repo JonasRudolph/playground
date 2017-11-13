@@ -53,7 +53,7 @@
 6. (Optional) Create a build
 6. Push changes made
    ```bash
-   git add -A &&  git commit -m "${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
+   git add -A &&  git commit -m "Release ${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
    ```
 
 ## Finish release
