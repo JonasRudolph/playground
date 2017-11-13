@@ -46,7 +46,7 @@
    ```bash
    git checkout -b "release-${releaseToCreate}" develop
    ```
-2. Set release number in CHANGELOG.md
+2. Set release number and date in CHANGELOG.md
 3. Remove unused sections from CHANGELOG.md
 4. Add a new [Unreleased] entry to the CHANGELOG.md
 5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml)
