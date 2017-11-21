@@ -80,7 +80,7 @@
     ```
 4. Remove release branch
     ```bash
-    git push origin --delete "release-${releaseToFinish}" && git branch -d "release-${releaseToFinish}"
+    git push --no-verify origin --delete "release-${releaseToFinish}" && git branch -d "release-${releaseToFinish}"
     ```
 
 ## Untrack branches that where deleted on the remote
