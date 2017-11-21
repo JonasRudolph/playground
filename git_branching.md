@@ -39,7 +39,7 @@
     ```
 3. Remove feature branch
     ```bash
-    git push origin --delete "${featureToFinish}" && git branch -d "${featureToFinish}"
+    git push --no-verify origin --delete "${featureToFinish}" && git branch -d "${featureToFinish}"
     ```
 
 ## Create release
