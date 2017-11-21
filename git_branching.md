@@ -25,9 +25,14 @@
 ## Finish feature
 0. Add changes to CHANGELOG.md
 1. Set feature name
-   ```bash
-   featureToFinish=$(git rev-parse --abbrev-ref HEAD) #current branch
-   ```
+    1. Current branch  
+       ```bash
+       featureToFinish=$(git rev-parse --abbrev-ref HEAD) #current branch
+       ```
+    2. Else  
+       ```bash
+       featureToFinish='my-feature'
+       ```
 2. Merge feature into develop and push
    ```bash
    git checkout develop && git merge --no-ff "${featureToFinish}" && git push
