@@ -27,7 +27,7 @@
 1. Set feature name
     * Current branch
         ```bash
-        featureToFinish=$(git rev-parse --abbrev-ref HEAD) #current branch
+        featureToFinish=$(git rev-parse --abbrev-ref HEAD)
         ```
     * Other branch
         ```bash
