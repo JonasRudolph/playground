@@ -26,7 +26,7 @@
 0. Add changes to CHANGELOG.md
 1. Set feature name
    ```bash
-   featureToFinish='my-feature'
+   featureToFinish=$(git rev-parse --abbrev-ref HEAD) #current branch
    ```
 2. Merge feature into develop and push
    ```bash
