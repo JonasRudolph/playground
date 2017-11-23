@@ -19,7 +19,7 @@
    ```
 1. Execute  
     ```bash
-    git checkout -b "${featureToCreate}" develop && git push --set-upstream origin "${featureToCreate}"
+    git checkout -b "${featureToCreate}" develop && git push --no-verify --set-upstream origin "${featureToCreate}"
     ```
 
 ## Finish feature
