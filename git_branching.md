@@ -35,7 +35,7 @@
         ```
 2. Merge feature into develop and push
     ```bash
-    git checkout develop && git merge --no-ff "${featureToFinish}" && git push
+    git checkout develop && git merge --no-ff --no-edit "${featureToFinish}" && git push
     ```
 3. Remove feature branch
     ```bash
