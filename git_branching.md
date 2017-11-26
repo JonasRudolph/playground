@@ -37,6 +37,14 @@
     ```bash
     git checkout develop && git merge --no-ff --no-edit "${featureToFinish}" && git push
     ```
+    * Conflict?
+        1. Resolve conflict
+        2. Commit and push
+            ```bash
+            git commit --no-edit && git push
+            ```
+        
+      
 3. Remove feature branch
     ```bash
     git push --no-verify origin --delete "${featureToFinish}" && git branch -d "${featureToFinish}"
