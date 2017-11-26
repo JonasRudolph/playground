@@ -76,7 +76,7 @@
     ```
 1. Merge release into master  
     ```bash
-    git checkout master && git merge --no-ff "release-${releaseToFinish}"
+    git checkout master && git merge --no-ff --no-edit "release-${releaseToFinish}"
     ```
 2. Create tag an push
     ```bash
@@ -84,7 +84,7 @@
     ```
 3. Merge release into develop and push
     ```bash
-    git checkout develop && git merge --no-ff "release-${releaseToFinish}" && git push
+    git checkout develop && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push
     ```
 4. Remove release branch
     ```bash
