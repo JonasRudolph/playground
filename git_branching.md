@@ -80,11 +80,11 @@
     ```
 2. Create tag an push
     ```bash
-    git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md" && git push && git push --tags
+    git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md" && git push --no-verify && git push --no-verify --tags
     ```
 3. Merge release into develop and push
     ```bash
-    git checkout develop && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push
+    git checkout develop && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push --no-verify
     ```
 4. Remove release branch
     ```bash
