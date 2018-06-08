@@ -62,7 +62,7 @@
 2. Set release number and date in CHANGELOG.md
 3. Remove unused sections from CHANGELOG.md
 4. Add a new [Unreleased] entry to the CHANGELOG.md
-5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml)
+5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml, pom.xml)
 6. (Optional) Create a build
 6. Push changes made
     ```bash
