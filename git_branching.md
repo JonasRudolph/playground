@@ -63,11 +63,11 @@
 3. Remove unused sections from CHANGELOG.md
 4. Add a new [Unreleased] entry to the CHANGELOG.md
 5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml, pom.xml)
-6. (Optional) Create a build
 6. Push changes made
     ```bash
     git add -A &&  git commit -m "Release ${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
     ```
+7. (Optional) Create a build
 
 ## Finish release
 0. Set release number
