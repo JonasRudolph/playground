@@ -13,13 +13,9 @@
    ```
 
 ## Create feature
-0. Set feature name
-   ```bash
-   featureToCreate='my-feature'
-   ```
-1. Execute  
+0. Execute  
     ```bash
-    git checkout -b "${featureToCreate}" develop && git push --no-verify --set-upstream origin "${featureToCreate}"
+    git_create_branch 'my-feature'
     ```
 
 ## Finish feature
@@ -33,9 +29,9 @@
         ```bash
         featureToFinish='my-feature'
         ```
-2. Merge feature into develop and push
+2. Merge feature into development and push
     ```bash
-    git checkout develop && git merge --no-ff --no-edit "${featureToFinish}" && git push
+    git checkout development && git merge --no-ff --no-edit "${featureToFinish}" && git push
     ```
     * Conflict?
         1. Resolve conflict
@@ -47,7 +43,7 @@
       
 3. Remove feature branch
     ```bash
-    git push --no-verify origin --delete "${featureToFinish}" && git branch -d "${featureToFinish}"
+    git_delete_branch_also_on_remote "${featureToFinish}"
     ```
 
 ## Create release
@@ -57,7 +53,7 @@
     ```
 1. Create release branch
     ```bash
-    git checkout -b "release-${releaseToCreate}" develop
+    git checkout -b "release-${releaseToCreate}" development
     ```
 2. Set release number and date in CHANGELOG.md
 3. Remove unused sections from CHANGELOG.md
@@ -82,13 +78,19 @@
     ```bash
     git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md" && git push --no-verify && git push --no-verify --tags
     ```
-3. Merge release into develop and push
+3. Merge release into development and push
     ```bash
-    git checkout develop && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push --no-verify
+    git checkout development && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push --no-verify
     ```
+    * Conflict?
+        1. Resolve conflict
+        2. Commit and push
+            ```bash
+            git commit --no-edit && git push
+            ```
 4. Remove release branch
     ```bash
-    git push --no-verify origin --delete "release-${releaseToFinish}" && git branch -d "release-${releaseToFinish}"
+    git_delete_branch_also_on_remote "release-${releaseToFinish}"
     ```
 
 ## Untrack branches that where deleted on the remote
