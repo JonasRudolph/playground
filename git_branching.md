@@ -51,36 +51,44 @@
     ```bash
     releaseToCreate='X.X.X'
     ```
-1. Create release branch
+1. Set release prefix
     ```bash
-    git checkout -b "release-${releaseToCreate}" development
+    releaseBranchPrefix='release'
     ```
-2. Set release number and date in CHANGELOG.md
-3. Remove unused sections from CHANGELOG.md
-4. Add a new [Unreleased] entry to the CHANGELOG.md
-5. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml, pom.xml)
-6. Push changes made
+2. Create release branch
     ```bash
-    git add -A &&  git commit -m "Release ${releaseToCreate}" && git push --set-upstream origin "release-${releaseToCreate}"
+    git checkout -b "${releaseBranchPrefix}-${releaseToCreate}" development
     ```
-7. (Optional) Create a build
+3. Set release number and date in CHANGELOG.md
+4. Remove unused sections from CHANGELOG.md
+5. Add a new [Unreleased] entry to the CHANGELOG.md
+6. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml, pom.xml)
+7. Push changes made
+    ```bash
+    git add -A &&  git commit -m "Release ${releaseToCreate}" && git push --set-upstream origin "$(jr_funct_git_get_current_branch)"
+    ```
+8. (Optional) Create a build
 
 ## Finish release
 0. Set release number
     ```bash
     releaseToFinish="${releaseToCreate}"
     ```
-1. Merge release into master  
+1. Set release prefix
     ```bash
-    git checkout master && git merge --no-ff --no-edit "release-${releaseToFinish}"
+    releaseBranchPrefix='release'
     ```
-2. Create tag an push
+2. Merge release into master  
+    ```bash
+    git checkout master && git merge --no-ff --no-edit "${releaseBranchPrefix}-${releaseToFinish}"
+    ```
+3. Create tag an push
     ```bash
     git tag -a "${releaseToFinish}" -m "For changes see [${releaseToFinish}] section in CHANGELOG.md" && git push --no-verify && git push --no-verify --tags
     ```
-3. Merge release into development and push
+4. Merge release into development and push
     ```bash
-    git checkout development && git merge --no-ff --no-edit "release-${releaseToFinish}" && git push --no-verify
+    git checkout development && git merge --no-ff --no-edit "${releaseBranchPrefix}-${releaseToFinish}" && git push --no-verify
     ```
     * Conflict?
         1. Resolve conflict
@@ -88,9 +96,9 @@
             ```bash
             git commit --no-edit && git push
             ```
-4. Remove release branch
+5. Remove release branch
     ```bash
-    git_delete_branch_also_on_remote "release-${releaseToFinish}"
+    git_delete_branch_also_on_remote "${releaseBranchPrefix}-${releaseToFinish}"
     ```
 
 ## Untrack branches that where deleted on the remote
