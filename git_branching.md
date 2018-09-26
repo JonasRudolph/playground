@@ -62,7 +62,7 @@
 3. Set release number and date in CHANGELOG.md
 4. Remove unused sections from CHANGELOG.md
 5. Add a new [Unreleased] entry to the CHANGELOG.md
-6. Set release number in other files (e.g. package.json, documentation, changescripts, plugin.xml, pom.xml)
+6. Set release number in other files (e.g. swagger.yaml, package.json, documentation, changescripts, plugin.xml, pom.xml)
 7. Push changes made
     ```bash
     git add -A &&  git commit -m "Release ${releaseToCreate}" && git push --set-upstream origin "$(jr_funct_git_get_current_branch)"
